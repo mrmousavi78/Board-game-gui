@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 import java.util.Scanner;
 
 
+
+
 public class MineSweeper extends Application {
     private static String _player1;
     private static String _player2;
@@ -16,6 +18,11 @@ public class MineSweeper extends Application {
     private static int _length;
     private static int _width;
     private static int _mines;
+
+    public static boolean checkWinStatus() {
+        // check if the game has winner;
+        return false;
+    }
 
 
     public void set_length(int length) {
@@ -94,8 +101,14 @@ public class MineSweeper extends Application {
             temp = sc.nextInt();
         }
         _mines = temp;
+        minesweeper(_length,_width,_mines);
         launch(args);
     }
+
+    private static void minesweeper(int length, int width, int mines) {
+        // run the game here
+    }
+
 
     private static boolean validate(int temp) {
         // mines validated here;
