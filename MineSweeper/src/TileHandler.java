@@ -22,7 +22,7 @@ public class TileHandler implements EventHandler<MouseEvent> {
                     case "Player1's Turn":
                         c.setFill(Color.RED);
                         tile.set_condition(Condition.PRESSED);
-                        MineSweeper.set_turn("Player2's Turn");
+//                        MineSweeper.set_turn("Player2's Turn");
                         break;
                     case "Player2's Turn":
                         c.setFill(Color.BLUE);
@@ -35,6 +35,7 @@ public class TileHandler implements EventHandler<MouseEvent> {
                 // do the right action when there isn't Bomb;
                 Text text = new Text(""+tile.getNeighbors());
                 tile.getChildren().add(text);
+                MineSweeper.set_turn(MineSweeper.get_turn().get_turn());
             }
         }
 
