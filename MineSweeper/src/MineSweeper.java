@@ -2,9 +2,10 @@ import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
+import javafx.scene.media.AudioClip;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
+import java.net.URL;
 import java.util.Scanner;
 
 
@@ -18,6 +19,8 @@ public class MineSweeper extends Application {
     private static int _length;
     private static int _width;
     private static int _mines;
+
+
 
     public static boolean checkWinStatus() {
         // check if the game has winner;
@@ -114,5 +117,10 @@ public class MineSweeper extends Application {
         // mines validated here;
 
         return true;
+    }
+    public static void playDefaultSound(){
+        URL path= MineSweeper.class.getResource("Bomb+1.wav");
+        AudioClip ac = new AudioClip(path.toString());
+        ac.play();
     }
 }

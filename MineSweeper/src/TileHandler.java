@@ -37,6 +37,7 @@ public class TileHandler implements EventHandler<MouseEvent> {
                             break;
                 }
                 tile.getChildren().add(c);
+                MineSweeper.playDefaultSound();
             } else {
                 tile.set_condition(Condition.PRESSED);
                 // do the right action when there isn't Bomb;
